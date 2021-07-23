@@ -28,7 +28,7 @@ const deleteFunc= (todo)=>{
 }
 
 const addTodo = (title,desc)=>{
-let sno = todos[todos.length-1].sno+1;
+let sno = todos[todos.length - 1].sno + 1;
 const mytodo = {
   sno : sno,
   title: title,
