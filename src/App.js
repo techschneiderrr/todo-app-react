@@ -10,18 +10,13 @@ function App() {
   const [todos, settodos] = useState([
   {
     sno : 1,
-    title : "task1",
-    desc : "You have to go to market to get the job done"
+    title : "Check out this app",
+    desc : "This is my first try at a react application so I hope you will like it"
   },
   {
     sno : 2,
-    title : "task2",
-    desc : "You have to go to dhobi to get the job done"
-  },
-  {
-    sno : 3,
-    title : "task3",
-    desc : "You have to go to school to get the job done"
+    title : "Check me out",
+    desc : "You can hae a look at the projects made by me by clicking the 'meet the creator' link in the nav"
   }
 ]);
 
@@ -32,10 +27,21 @@ const deleteFunc= (todo)=>{
   }))
 }
 
+const addTodo = (title,desc)=>{
+let sno = todos[todos.length-1].sno+1;
+const mytodo = {
+  sno : sno,
+  title: title,
+  desc: desc
+}
+console.log(mytodo);
+settodos([...todos,mytodo]);
+}
+
   return (
     <> 
    <Header title="Todos App" searchBar={false}/>
-   <Addtodo/>
+   <Addtodo addTodo={addTodo}/>
    <Todos todos={todos} deleteFunc={deleteFunc}/>
    
    <Footer/>
